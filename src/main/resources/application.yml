@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: EtsTurDB
+      username: burcuser
+      password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
