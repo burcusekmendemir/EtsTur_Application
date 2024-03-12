@@ -1,5 +1,7 @@
 package com.burcu.domain;
 
+import com.burcu.utility.enums.ERole;
+import com.burcu.utility.enums.EStatus;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -28,5 +30,12 @@ public class Auth extends BaseEntity {
     @Size(min = 8, max = 20)
     @NotNull
     private String password;
+
+    @Builder.Default
+    private ERole role=ERole.USER;
+    @Builder.Default
+    private EStatus status=EStatus.PENDING;
+
+    private String activationCode;
 
 }

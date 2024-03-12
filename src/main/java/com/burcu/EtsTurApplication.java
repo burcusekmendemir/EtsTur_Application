@@ -25,4 +25,11 @@ public class EtsTurApplication {
      * 5- Redis
      * 6- Login-Register (UserProfile) fiyat düşünce bilgi gidecek
      */
+
+
+    /**
+     * Controller hepsinde olmamalı,
+     * ekranda görülenlere göre kontroller yazılacak.
+     * soldaki filtereleri görebildiğimiz bir endpoint otele tıkladığımızda görebileceğimiz bir end point
+     */
 }

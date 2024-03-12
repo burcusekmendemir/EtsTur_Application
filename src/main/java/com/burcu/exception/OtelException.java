@@ -3,7 +3,7 @@ package com.burcu.exception;
 import lombok.Getter;
 
 @Getter // errortype erişebilmek için getter ekledik
-public class AuthServiceException extends RuntimeException {
+public class OtelException extends RuntimeException {
     /**
      * Kendi Exp sınıfımızı oluşturmak için yapılacaklar;
      * 1- Runtime Exp miras alınır
@@ -15,12 +15,12 @@ public class AuthServiceException extends RuntimeException {
 
     private final ErrorType errorType;
 
-    public AuthServiceException(ErrorType errorType) {
+    public OtelException(ErrorType errorType) {
         super(errorType.getMessage());
         this.errorType = errorType;
     }
 
-    public AuthServiceException(ErrorType errorType, String message){
+    public OtelException(ErrorType errorType, String message){
         super(message);
         this.errorType = errorType;
     }

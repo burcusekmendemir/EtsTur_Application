@@ -7,11 +7,15 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/BaseEntity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/Otel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/Room.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/AuthServiceException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/ErrorMessage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/ErrorType.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/GlobalExceptionHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/OtelException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/AddressService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/RoomService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/CodeGenerator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/IService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/JwtTokenManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/ServiceManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/enums/ECity.java" charset="UTF-8" />
   </component>

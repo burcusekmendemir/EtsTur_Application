@@ -1,5 +1,6 @@
 package com.burcu.repository;
 
+import com.burcu.domain.Category;
 import com.burcu.domain.UserProfile;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

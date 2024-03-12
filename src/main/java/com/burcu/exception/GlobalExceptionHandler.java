@@ -22,9 +22,9 @@ public class GlobalExceptionHandler {
                 , HttpStatus.INTERNAL_SERVER_ERROR);
     }
     //olası bütün hatalar standardize edilmeli, aynı sonucu dönmeli bu sebeple errormessage yazıldı. code,message,fields dönsün istedik.
-    @ExceptionHandler(AuthServiceException.class) // okulot.class dinle, hata bulursan yakala demek
+    @ExceptionHandler(OtelException.class) // okulot.class dinle, hata bulursan yakala demek
     @ResponseBody //cevap olduğu için bunu yazdık, httpstatus kesin belirtilmeli, createerrormessage ile bodyi oluşturuyoruz
-    public ResponseEntity<ErrorMessage> authServiceHandler(AuthServiceException authServiceException){
+    public ResponseEntity<ErrorMessage> authServiceHandler(OtelException authServiceException){
         return new ResponseEntity<>(createErrorMessage(authServiceException,authServiceException.getErrorType()),
                 authServiceException.getErrorType().getHttpStatus());
     }

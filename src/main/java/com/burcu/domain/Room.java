@@ -21,6 +21,7 @@ public class Room extends BaseEntity {
     @Id
     private String id;
     private String name;
+    private int roomNumber;
     private ERoomType roomType;
     private int personCapacity;
     private int bedCount;

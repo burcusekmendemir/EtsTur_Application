@@ -26,7 +26,7 @@ public class Otel extends BaseEntity {
     private LocalDateTime exitTime;
 
     @Builder.Default
-    private List<String> rooms=new ArrayList<>(); //TODO: string mi class mı?
+    private List<String> rooms=new ArrayList<>();
 
     @Builder.Default
     private List<String> comments=new ArrayList<>();
