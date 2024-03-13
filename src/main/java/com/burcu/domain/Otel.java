@@ -24,15 +24,13 @@ public class Otel extends BaseEntity {
     private String phoneNumber;
     private LocalDateTime entryTime;
     private LocalDateTime exitTime;
+    private Double point;
 
-    @Builder.Default
-    private List<String> rooms=new ArrayList<>();
 
-    @Builder.Default
-    private List<String> comments=new ArrayList<>();
 
-    @Builder.Default
-    private List<Image> images=new ArrayList<>();
+
+
+
 
 
 

@@ -18,10 +18,13 @@ public class RestApiUrls {
     public static final String SAVE_CATEGORY = "/save-category";
     public static final String SAVE_ADDRESS = "/save-address";
     public static final String SAVE_CATEGORY_PROPERTIES ="/save-category-properties";
-    public static final String SAVE_ROOM = "/save-room"; ;
+    public static final String SAVE_ROOM = "/save-room";
     public static final String SAVE_IMAGE = "/save-image";
-    public static final String SAVE_OTEL = "/save-otel"; ;
+    public static final String SAVE_OTEL = "/save-otel";
     public static final String ACTIVATE_STATUS = "/activate-status";
+    public static final String SAVE_TAGS = "/save-tags"; ;
+
+    public static final String FILTER_LIST = "/filter-list";
 
     public static final String ADD= "/add";
     public static final String GET_ALL= "/get-all";

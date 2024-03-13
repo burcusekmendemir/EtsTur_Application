@@ -16,6 +16,7 @@ public class Address extends BaseEntity {
 
     @Id
     private String id;
+    private String name;
     private String distirctId;
     private String streetNumber;
     private String zipCode;

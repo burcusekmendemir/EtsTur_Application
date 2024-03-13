@@ -18,7 +18,8 @@ public class Comment extends BaseEntity {
     private String userProfileId;
     private String otelId;
     private String context;
-    private int point;
+    private Double point;
+
 
 
 }

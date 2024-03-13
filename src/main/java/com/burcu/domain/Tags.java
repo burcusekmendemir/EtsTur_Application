@@ -18,4 +18,5 @@ public class Tags extends BaseEntity {
     @Id
     private String id;
     private String name;
+
 }

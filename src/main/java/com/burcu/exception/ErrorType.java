@@ -29,7 +29,9 @@ public enum ErrorType {
     USER_NOT_FOUND(1013, "Kullanıcı bulunamadı" , HttpStatus.BAD_REQUEST),
     ACTIVATION_CODE_ERROR(1014, "Aktivasyon kodu hatalı" , HttpStatus.BAD_REQUEST ),
     TOKEN_NOT_CREATED(1015,"Token oluşturulamadı" ,HttpStatus.BAD_REQUEST ),
-    ACCOUNT_NOT_ACTIVE(1016,"Hesap aktif degil" , HttpStatus.BAD_REQUEST );
+    TAGS_ALREADY_EXISTS(1017,"Tag daha once eklenmistir" ,HttpStatus.BAD_REQUEST ),
+    ACCOUNT_NOT_ACTIVE(1016,"Hesap aktif degil" , HttpStatus.BAD_REQUEST ),
+    OTEL_NOT_FOUND(1018,"Otel bulunamadı" , HttpStatus.BAD_REQUEST);
 
 
     int code;

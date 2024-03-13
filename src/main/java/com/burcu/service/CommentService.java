@@ -8,6 +8,8 @@ import com.burcu.repository.CommentRepository;
 import com.burcu.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentService extends ServiceManager<Comment, String> {
 
@@ -16,5 +18,9 @@ public class CommentService extends ServiceManager<Comment, String> {
     public CommentService(CommentRepository commentRepository) {
         super(commentRepository);
         this.commentRepository = commentRepository;
+    }
+
+    public List<Comment> findByOtelId(String id) {
+        return commentRepository.findByOtelId(id);
     }
 }

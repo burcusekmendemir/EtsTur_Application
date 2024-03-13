@@ -1,5 +1,6 @@
 package com.burcu.dto.request;
 
+import com.burcu.utility.enums.EImageCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class AddressSaveRequestDto {
+public class TagsSaveRequestDto {
 
     private String name;
-    private String streetNumber;
-    private String zipCode;
-    private String distirctId;
-    private String description;
 }

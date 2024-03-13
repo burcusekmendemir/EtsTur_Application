@@ -1,4 +1,4 @@
-package com.burcu.dto.request;
+package com.burcu.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,11 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class AddressSaveRequestDto {
+public class FilterListResponseDto {
 
     private String name;
-    private String streetNumber;
-    private String zipCode;
-    private String distirctId;
-    private String description;
+    private String parentName;
 }

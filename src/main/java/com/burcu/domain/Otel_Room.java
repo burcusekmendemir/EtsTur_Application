@@ -1,7 +1,9 @@
 package com.burcu.domain;
 
-import com.burcu.utility.enums.EPaymentType;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,11 +14,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class Payment extends BaseEntity{
+public class Otel_Room extends BaseEntity {
 
     @Id
     private String id;
-    //private String reservationId;
-    private Double totalPrice;
-    private EPaymentType paymentType;
+    private String otelId;
+    private String roomId;
 }

@@ -55,7 +55,6 @@ public class AuthService extends ServiceManager<Auth, String> {
         } else {
             throw new OtelException(ErrorType.ACCOUNT_NOT_ACTIVE);
         }
-
     }
 
     public Boolean activateStatus(ActivateStatusRequestDto dto) {

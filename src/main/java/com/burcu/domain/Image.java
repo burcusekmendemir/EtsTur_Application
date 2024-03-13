@@ -22,5 +22,6 @@ public class Image extends BaseEntity {
     private String url;
     private EImageCategory category;
     private String roomId;
+    private String otelId;
 
 }

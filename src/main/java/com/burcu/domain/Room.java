@@ -30,9 +30,9 @@ public class Room extends BaseEntity {
     private Double unitPrice;
     private String description;
 
+
     @Builder.Default
     private List<ERoomProperties> roomProperties=new ArrayList<>();
 
-    @Builder.Default
-    private List<Image> imageList=new ArrayList<>();
+
 }

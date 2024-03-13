@@ -4,14 +4,18 @@
     <file url="file://$PROJECT_DIR$/build.gradle" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/EtsTurApplication.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/constants/RestApiUrls.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/controller/OtelController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/BaseEntity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/Otel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/domain/Room.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/dto/response/OtelHomePageResponseDto.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/ErrorMessage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/ErrorType.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/GlobalExceptionHandler.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/OtelException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/AddressService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/OtelService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/PropertiesService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/RoomService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/CodeGenerator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/utility/IService.java" charset="UTF-8" />
