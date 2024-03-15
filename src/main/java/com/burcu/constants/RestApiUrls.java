@@ -22,8 +22,11 @@ public class RestApiUrls {
     public static final String SAVE_IMAGE = "/save-image";
     public static final String SAVE_OTEL = "/save-otel";
     public static final String ACTIVATE_STATUS = "/activate-status";
-    public static final String SAVE_TAGS = "/save-tags"; ;
-
+    public static final String SAVE_TAGS = "/save-tags";
+    public static final String ADD_FAVOURITE = "/add-favourite";
+    public static final String FIND_BY_TOKEN = "find-by-token";
+    public static final String UPDATE = "update";
+    public static final String GET_FAV_OTELS = "get-fav-otels";
     public static final String FILTER_LIST = "/filter-list";
 
     public static final String ADD= "/add";

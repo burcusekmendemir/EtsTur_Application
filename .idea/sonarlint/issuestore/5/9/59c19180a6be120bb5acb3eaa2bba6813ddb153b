@@ -1,7 +1,5 @@
 
-N
-java:S1172",Remove this unused method parameter "token".(ÄìÇõÿÿÿÿÿ8½‹Ñ½ã1
-V
-java:S1068"9Remove this unused "userProfileRepository" private field.(µËå8¾‹Ñ½ã1
-P
-java:S1068"3Remove this unused "jwtTokenManager" private field.(ššı 8ö«Ğ½ã1
+r
+java:S3655&"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ú¡ì¿ùÿÿÿÿ8ÄöŠ‹ä1
+Q
+java:S1128"5Remove this unused import 'org.apache.catalina.User'.(›ân8ÒöŠ‹ä1

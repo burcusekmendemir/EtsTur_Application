@@ -21,11 +21,13 @@ import java.util.Optional;
 public class AuthService extends ServiceManager<Auth, String> {
     private final AuthRepository authRepository;
     private final JwtTokenManager jwtTokenManager;
+    private final MailSenderService mailSenderService;
 
-    public AuthService(AuthRepository authRepository, JwtTokenManager jwtTokenManager) {
+    public AuthService(AuthRepository authRepository, JwtTokenManager jwtTokenManager, MailSenderService mailSenderService) {
         super(authRepository);
         this.authRepository = authRepository;
         this.jwtTokenManager = jwtTokenManager;
+        this.mailSenderService = mailSenderService;
     }
 
     public RegisterResponseDto register(AuthRegisterRequestDto dto) {
@@ -38,7 +40,10 @@ public class AuthService extends ServiceManager<Auth, String> {
         Auth auth=AuthMapper.INSTANCE.fromAuthRegisterRequestDtoToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
         save(auth);
-        return AuthMapper.INSTANCE.fromAuthToRegisterResponseDto(auth);
+        RegisterResponseDto responseDto = AuthMapper.INSTANCE.fromAuthToRegisterResponseDto(auth);
+        mailSenderService.sendMail(responseDto);
+
+        return responseDto;
     }
 
 
@@ -57,17 +62,16 @@ public class AuthService extends ServiceManager<Auth, String> {
         }
     }
 
-    public Boolean activateStatus(ActivateStatusRequestDto dto) {
-        Optional<Auth> optionalAuth = findById(dto.getAuthId());
-        if (optionalAuth.isEmpty()) {
-            throw new OtelException(ErrorType.USER_NOT_FOUND);
-        }
-        if (optionalAuth.get().getActivationCode().equals(dto.getActivationCode())) {
-            optionalAuth.get().setStatus(EStatus.ACTIVE);
-            update(optionalAuth.get());
-            return true;
-        } else {
-            throw new OtelException(ErrorType.ACTIVATION_CODE_ERROR);
-        }
+    public String activateStatus(String activationCode) {
+        Auth auth = authRepository.findByActivationCode(activationCode)
+                .orElseThrow(() -> new OtelException(ErrorType.ACTIVATION_CODE_ERROR));
+
+        auth.setStatus(EStatus.ACTIVE);
+        auth.setActivationCode(null); // Aktivasyon kodunu temizle
+
+        authRepository.save(auth);
+
+        return "Hesabınız başarıyla aktifleştirildi. Artık giriş yapabilirsiniz.";
     }
+
 }

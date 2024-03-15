@@ -1,8 +1,6 @@
 
 W
 java:S1118":Add a private constructor to hide the implicit public one.(†˜Éå8°€«¸ã1
->
-java:S1116"Remove this empty statement.(ÖöªÚþÿÿÿÿ8Ÿ´«¸ã1
 D
 java:S1068"'Remove this unused "API" private field.(Ú¥ÎŽ8´€«¸ã1
 E

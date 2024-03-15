@@ -3,3 +3,5 @@ X
 java:S1128"6Remove this unused import 'com.burcu.domain.Category'.(„Á´Èûÿÿÿÿ8ŸìÙ½ã1
 x
 java:S1128"[Remove this unused import 'org.springframework.boot.autoconfigure.flyway.FlywayProperties'.(âÚÃƒ8 ìÙ½ã1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8À”¼İã1

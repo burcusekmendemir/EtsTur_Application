@@ -14,6 +14,8 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/GlobalExceptionHandler.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/exception/OtelException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/AddressService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/AuthService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/MailSenderService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/OtelService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/PropertiesService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/burcu/service/RoomService.java" charset="UTF-8" />

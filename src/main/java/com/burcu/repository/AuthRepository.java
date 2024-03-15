@@ -13,4 +13,6 @@ public interface AuthRepository extends MongoRepository<Auth, String> {
     Optional<Auth> findByUsername(String username);
 
     Optional<Auth> findOptionalByUsernameAndPassword(String username, String password);
+
+    Optional<Auth> findByActivationCode(String activationCode);
 }

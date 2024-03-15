@@ -158,4 +158,9 @@ public class OtelService extends ServiceManager<Otel, String> {
     public Otel findOtelById(String id) {
         return otelRepository.findById(id).orElseThrow(() -> new OtelException(ErrorType.OTEL_NOT_FOUND));
     }
+
+    public List<Otel> findAllByOtelIdIn(List<String> favOtels) {
+
+        return otelRepository.findAllByIdIn(favOtels);
+    }
 }

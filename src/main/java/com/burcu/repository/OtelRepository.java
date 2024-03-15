@@ -14,4 +14,6 @@ public interface OtelRepository extends MongoRepository<Otel, String> {
     List<Otel> findByNameContainingIgnoreCase(String name);
 
     List<Otel> findAllByAddressIdIn(List<String> addressListId);
+
+    List<Otel> findAllByIdIn(List<String> favOtels);
 }

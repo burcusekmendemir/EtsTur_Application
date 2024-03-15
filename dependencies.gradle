@@ -15,7 +15,8 @@ ext{
             mapstruct                           : "org.mapstruct:mapstruct:${versions.mapstruct}",
             mapstructProcessor                  : "org.mapstruct:mapstruct-processor:${versions.mapstruct}",
             openApi                             : "org.springdoc:springdoc-openapi-starter-webmvc-ui:${versions.openApi}",
-            jwt                                 : "com.auth0:java-jwt:${versions.jwt}"
+            jwt                                 : "com.auth0:java-jwt:${versions.jwt}",
+            springBootMailSender                : "org.springframework.boot:spring-boot-starter-mail:${versions.springBoot}"
 
     ]
 }

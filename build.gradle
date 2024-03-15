@@ -15,7 +15,7 @@ allprojects {
     apply from: "${rootDir}/dependencies.gradle"
 }
 
-subprojects {
+
     group = 'com.burcu'
     version = 'v.0.1'
     java {
@@ -27,7 +27,7 @@ subprojects {
             options.encoding = 'UTF-8'
         }
     }
-}
+
 
 allprojects {
     repositories {
@@ -50,6 +50,7 @@ allprojects {
         annotationProcessor libs.mapstructProcessor
         implementation libs.jwt
         implementation libs.springBootStarterDataMongoDB
+        implementation libs.springBootMailSender
 
     }
 

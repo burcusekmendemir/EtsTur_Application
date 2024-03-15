@@ -5,6 +5,9 @@ import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
@@ -23,6 +26,9 @@ public class UserProfile extends BaseEntity{
     private String phone;
     private String address;
     private String authId;
+    private String password;
+    @Builder.Default
+    private List<String> favOtels= new ArrayList<>();
 
 
 
