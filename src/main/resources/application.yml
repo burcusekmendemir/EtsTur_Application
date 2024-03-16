@@ -20,5 +20,7 @@ spring:
           auth: true
           starttls:
             enable: true
-
+myapplication:
+  redis:
+    host: ${EtsTurHostRedis}
 

@@ -1,5 +1,7 @@
 
+b
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(¬Úç—ûÿÿÿÿ8šõ”ºä1
 G
-java:S1128"*Remove this unused import 'lombok.Getter'.(ùÒµÙ8¢±û†ä1
+java:S1128	"*Remove this unused import 'lombok.Getter'.(ùÒµÙ8Ÿ¦å»ä1
 Q
-java:S1128	"5Remove this unused import 'org.apache.catalina.User'.(›ân8¢±û†ä1
+java:S1128"5Remove this unused import 'org.apache.catalina.User'.(›ân8Ÿ¦å»ä1

@@ -219,3 +219,9 @@ f
 6src/main/java/com/burcu/service/MailSenderService.java,c\7\c78939266ce653107b0214eabadd4f3e1b21bb68
 w
 G.idea/sonarlint/issuestore/5/9/59c19180a6be120bb5acb3eaa2bba6813ddb153b,3\0\3070f7196347f617b680b656cb0a229b8d22fb2c
+_
+/src/main/java/com/burcu/config/RedisConfig.java,c\2\c219f3b4b1e924431793b8f32e7f69c7c6ff9213
+^
+.src/main/java/com/burcu/utility/DataRedis.java,9\1\91f63b90c56696f7827135d8b2447c7242dd8bc2
+p
+@src/main/java/com/burcu/dto/response/FindByTokenResponseDto.java,a\c\ac17fc93815b60435c19480ca81909a904a8e27e

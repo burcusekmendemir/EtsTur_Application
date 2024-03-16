@@ -82,9 +82,9 @@ public class OtelController {
         return ResponseEntity.ok(otelService.filterList());
     }
 
-    @GetMapping("/find-all")
+    @GetMapping("/find-all-by-point")
     @CrossOrigin("*")
-    public ResponseEntity<List<OtelHomePageResponseDto>> findAll(){
+    public ResponseEntity<List<Otel>> findAllByPoint(){
         return ResponseEntity.ok(otelService.findAllByPoint());
     }
 

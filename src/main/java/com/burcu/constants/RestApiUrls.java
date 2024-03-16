@@ -14,6 +14,7 @@ public class RestApiUrls {
     public static final String USER_PROFILE = ROOT + "/user-profile";
     public static final String AUTH = ROOT + "/auth";
     public static final String OTEL = ROOT + "/otel";
+    public static final String SAVE_USER_PROFILE = "/save-user-profile";
     public static final String SAVE_PROPERTIES = "/save-properties";
     public static final String SAVE_CATEGORY = "/save-category";
     public static final String SAVE_ADDRESS = "/save-address";
@@ -28,7 +29,7 @@ public class RestApiUrls {
     public static final String UPDATE = "update";
     public static final String GET_FAV_OTELS = "get-fav-otels";
     public static final String FILTER_LIST = "/filter-list";
-
+    public static final String FIND_ALL = "find-all";
     public static final String ADD= "/add";
     public static final String GET_ALL= "/get-all";
     public static final String GET_BY_ID= "/get-by-id";

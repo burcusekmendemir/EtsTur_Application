@@ -11,6 +11,8 @@ import com.burcu.exception.OtelException;
 import com.burcu.mapper.OtelMapper;
 import com.burcu.repository.OtelRepository;
 import com.burcu.utility.ServiceManager;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -26,14 +28,14 @@ public class OtelService extends ServiceManager<Otel, String> {
     private final AddressService addressService;
     private final RoomService roomService;
     private final ImageService imageService;
-    private final OtelImageService otelimageService;
-    private final OtelCommentService otelcommentService;
     private final OtelTagsService otelTagsService;
     private final CommentService commentService;
     private final TagsService tagsService;
+    private final CacheManager cacheManager;
 
 
-    public OtelService(OtelRepository otelRepository, CategoryService categoryService, PropertiesService propertiesService, CategoryPropertiesService categoryPropertiesService, AddressService addressService, RoomService roomService, ImageService imageService, OtelImageService otelimageService, OtelCommentService otelcommentService, OtelTagsService otelTagsService, CommentService commentService, TagsService tagsService) {
+
+    public OtelService(OtelRepository otelRepository, CategoryService categoryService, PropertiesService propertiesService, CategoryPropertiesService categoryPropertiesService, AddressService addressService, RoomService roomService, ImageService imageService, OtelTagsService otelTagsService, CommentService commentService, TagsService tagsService, CacheManager cacheManager) {
         super(otelRepository);
         this.otelRepository = otelRepository;
         this.categoryService = categoryService;
@@ -42,11 +44,10 @@ public class OtelService extends ServiceManager<Otel, String> {
         this.addressService = addressService;
         this.roomService = roomService;
         this.imageService = imageService;
-        this.otelimageService = otelimageService;
-        this.otelcommentService = otelcommentService;
         this.otelTagsService = otelTagsService;
         this.commentService = commentService;
         this.tagsService = tagsService;
+        this.cacheManager = cacheManager;
     }
 
     public OtelSaveResponseDto saveOtel(OtelSaveRequestDto dto) {
@@ -57,6 +58,12 @@ public class OtelService extends ServiceManager<Otel, String> {
 
         Otel otel= OtelMapper.INSTANCE.fromOtelSaveRequestDtoToOtel(dto);
         save(otel);
+        Objects.requireNonNull(cacheManager.getCache("find-otel-by-name")).evict(otel);
+        Objects.requireNonNull(cacheManager.getCache("find-all-by-point")).evict(otel);
+        Objects.requireNonNull(cacheManager.getCache("find-otel-by-address")).evict(otel);
+        Objects.requireNonNull(cacheManager.getCache("find-otel-by-id")).evict(otel);
+        Objects.requireNonNull(cacheManager.getCache("find-otel-by-otelId")).evict(otel);
+
         return OtelMapper.INSTANCE.fromOtelToOtelSaveResponseDto(otel);
     }
     public Category saveCategory(CategorySaveRequestDto dto) {
@@ -64,6 +71,7 @@ public class OtelService extends ServiceManager<Otel, String> {
     }
 
     public Properties saveProperties(PropertiesSaveRequestDto dto) {
+        Objects.requireNonNull(cacheManager.getCache("filter-list")).evict(dto);
         return propertiesService.save(dto);
     }
 
@@ -88,28 +96,29 @@ public class OtelService extends ServiceManager<Otel, String> {
     }
 
 
+    @Cacheable(value = "filter-list")
     public Map<Properties, List<Properties>> filterList() {
         return propertiesService.filterList();
     }
 
-    public List<OtelHomePageResponseDto> findAllByPoint() {
 
-        List<OtelHomePageResponseDto> otelDtoList=new ArrayList<>();
-        List<Otel> otelList = findAll();
 
-        otelList.stream()
-                .map(this::getHomePageOtelResponseDto)
-                .sorted(Comparator.comparingDouble(OtelHomePageResponseDto::getPoint).reversed())
-                .forEach(otelDtoList::add);
-
-        return otelDtoList;
+    @Cacheable(value = "find-all-by-point")
+    public List<Otel> findAllByPoint() {
+        try {
+            Thread.sleep(3000);
+            return otelRepository.findAllByOrderByPointDesc();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     /**
-     * otel/find-search (aram çubuğuna yazılan ifadeye göre filtreleme yaparak otel listesi dönecek)
+     * otel/find-search (arama çubuğuna yazılan ifadeye göre filtreleme yaparak otel listesi dönecek)
      * @return
      */
+    @Cacheable(value = "find-otel-by-name")
     public List<OtelHomePageResponseDto> findOtelByName(String name) {
         List<OtelHomePageResponseDto> otelDtoList=new ArrayList<>();
         List<Otel> otelList = otelRepository.findByNameContainingIgnoreCase(name);
@@ -122,6 +131,8 @@ public class OtelService extends ServiceManager<Otel, String> {
         return otelDtoList;
     }
 
+
+    @Cacheable(value = "find-otel-by-address")
     public List<OtelHomePageResponseDto> findOtelByAddress(String search) {
         List<OtelHomePageResponseDto> otelDtoList = new ArrayList<>();
         List<Address> addressList = addressService.findByNameContainingIgnoreCaseOrStreetNumberContainingIgnoreCase(search);
@@ -134,7 +145,6 @@ public class OtelService extends ServiceManager<Otel, String> {
         return otelDtoList;
 
     }
-
 
     private OtelHomePageResponseDto getHomePageOtelResponseDto(Otel otel) {
         Optional<Address> addressOptional = addressService.findById(otel.getAddressId());
@@ -154,13 +164,13 @@ public class OtelService extends ServiceManager<Otel, String> {
 
     }
 
-
+    @Cacheable(value = "find-otel-by-id")
     public Otel findOtelById(String id) {
         return otelRepository.findById(id).orElseThrow(() -> new OtelException(ErrorType.OTEL_NOT_FOUND));
     }
 
+    @Cacheable(value = "find-otel-by-otelId")
     public List<Otel> findAllByOtelIdIn(List<String> favOtels) {
-
         return otelRepository.findAllByIdIn(favOtels);
     }
 }

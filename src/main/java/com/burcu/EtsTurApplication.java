@@ -11,51 +11,25 @@ public class EtsTurApplication {
 
     }
 
-    /**
-     * https://www.etstur.com/
-     *
-     * Kiralamak istediği odayla ilgili temel bilgiler.
-     * Drawsqlde bu yapıyı çıkartmak etstur
-     * kategori sub kategori, resimler tagler, resimlerin de kategorileri var
-     *
-     * 1- Mevcut bir örnek incelenecek ve gereli bilgiler toplanacak madde madde yazılacak. (ets)
-     * 2- Security (JWT)
-     * 3- Swl Şeması
-     * 4- MongoDB
-     * 5- Redis
-     * 6- Login-Register (UserProfile) fiyat düşünce bilgi gidecek
-     */
-
 
     /**
-     * Controller hepsinde olmamalı,
-     * ekranda görülenlere göre kontroller yazılacak.
-     * soldaki filtereleri görebildiğimiz bir endpoint otele tıkladığımızda görebileceğimiz bir end point
+     *  Uygulamada olacak sayfalar ve Kullanılacak end-point listesi
+     *   -- Login
+     *   +----- auth/dologin (giriş için kullanılacak ve token dönecek)
+     *  -- Register
+     *    +----- auth/register (yeni kullanıcı üyeliği için kullanılacak)
+     *  -- AnaSayfa
+     *     +----- otel/filter-list (sol tarafta bulunan filtreleme başlıklarını listelemek için kullanılacak)
+     *     +----- otel/find-all (popüler otellerden başlayarak ana sayfada gösterilecek otellerin listesini dönecek -)
+     *     +----- otel/find-search (aram çubuğuna yazılan ifadeye göre filtreleme yaparak otel listesi dönecek)
+     *  -- Otel Detay
+     *      +----- otel/find-by-id (otel e ait detay bilgilerini dönecek, resimler, açıklamalar, odalar v.s.)
+     *      +----- user/add-favori (kullanıcı otel i beğenebilecek.)
+     *  -- Kullanıcı Sayfası
+     *      +----- user/find-by-token (kullanıcıya ait bilgileri dönecek)
+     *      +----- user/update (kullanıcı bilgilerini güncelleyecek)
+     *      +----- user/favori (kullanıcının beğendiği otellerin listesini dönecek)
      */
 
-    /**
-     * * ************
-     *          * Uygulamada olacak sayfalar ve Kullanılacak end-point listesi
-     *          * -- Login
-     *          *  +----- auth/dologin (giriş için kullanılacak ve token dönecek)
-     *          * -- Register
-     *          *  +----- auth/register (yeni kullanıcı üyeliği için kullanılacak)
-     *          * -- AnaSayfa
-     *          *  +----- otel/filter-list (sol tarafta bulunan filtreleme başlıklarını listelemek için kullanılacak)
-     *          *  +----- otel/find-all (popüler otellerden başlayarak ana sayfada gösterilecek otellerin listesini dönecek -)
-     *          *  +----- otel/find-search (aram çubuğuna yazılan ifadeye göre filtreleme yaparak otel listesi dönecek)
-     *          * -- Otel Detay
-     *          *  +----- otel/find-by-id (otel e ait detay bilgilerini dönecek, resimler, açıklamalar, odalar v.s.)
-     *          *  +----- user/add-favori (kullanıcı otel i beğenebilecek.)
-     *          * -- Kullanıcı Sayfası
-     *          *  +----- user/find-by-token (kullanıcıya ait bilgileri dönecek)
-     *          *  +----- user/update (kullanıcı bilgilerini güncelleyecek)
-     *          *  +----- user/favori (kullanıcının beğendiği otellerin listesini dönecek)
-     *          *  --------------------------------
-     */
-
-    /**
-     * başlık-altbaşlık
-     */
 
 }

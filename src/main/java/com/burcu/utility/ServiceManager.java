@@ -47,6 +47,7 @@ public class ServiceManager <T extends BaseEntity,ID> implements IService<T,ID> 
         repository.deleteById(id);
     }
 
+
     @Override
     public List<T> findAll() {
         return repository.findAll();

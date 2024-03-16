@@ -2,6 +2,7 @@ package com.burcu.repository;
 
 import com.burcu.domain.Category;
 import com.burcu.domain.Otel;
+import com.burcu.dto.response.OtelHomePageResponseDto;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Collection;
@@ -16,4 +17,6 @@ public interface OtelRepository extends MongoRepository<Otel, String> {
     List<Otel> findAllByAddressIdIn(List<String> addressListId);
 
     List<Otel> findAllByIdIn(List<String> favOtels);
+
+    List<Otel> findAllByOrderByPointDesc();
 }

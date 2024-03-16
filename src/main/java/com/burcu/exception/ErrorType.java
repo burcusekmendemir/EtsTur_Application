@@ -31,7 +31,8 @@ public enum ErrorType {
     TOKEN_NOT_CREATED(1015,"Token oluşturulamadı" ,HttpStatus.BAD_REQUEST ),
     TAGS_ALREADY_EXISTS(1017,"Tag daha once eklenmistir" ,HttpStatus.BAD_REQUEST ),
     ACCOUNT_NOT_ACTIVE(1016,"Hesap aktif degil" , HttpStatus.BAD_REQUEST ),
-    OTEL_NOT_FOUND(1018,"Otel bulunamadı" , HttpStatus.BAD_REQUEST);
+    OTEL_NOT_FOUND(1018,"Otel bulunamadı" , HttpStatus.BAD_REQUEST),
+    OTEL_IS_FAVOURITE(1019,"Otel zaten favorilerde yer alıyor" ,HttpStatus.BAD_REQUEST );
 
 
     int code;

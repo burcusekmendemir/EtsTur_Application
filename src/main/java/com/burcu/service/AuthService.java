@@ -1,7 +1,6 @@
 package com.burcu.service;
 
 import com.burcu.domain.Auth;
-import com.burcu.dto.request.ActivateStatusRequestDto;
 import com.burcu.dto.request.AuthLoginRequestDto;
 import com.burcu.dto.request.AuthRegisterRequestDto;
 import com.burcu.dto.response.RegisterResponseDto;
@@ -22,12 +21,14 @@ public class AuthService extends ServiceManager<Auth, String> {
     private final AuthRepository authRepository;
     private final JwtTokenManager jwtTokenManager;
     private final MailSenderService mailSenderService;
+    private final UserProfileService userProfileService;
 
-    public AuthService(AuthRepository authRepository, JwtTokenManager jwtTokenManager, MailSenderService mailSenderService) {
+    public AuthService(AuthRepository authRepository, JwtTokenManager jwtTokenManager, MailSenderService mailSenderService, UserProfileService userProfileService) {
         super(authRepository);
         this.authRepository = authRepository;
         this.jwtTokenManager = jwtTokenManager;
         this.mailSenderService = mailSenderService;
+        this.userProfileService = userProfileService;
     }
 
     public RegisterResponseDto register(AuthRegisterRequestDto dto) {
@@ -40,8 +41,10 @@ public class AuthService extends ServiceManager<Auth, String> {
         Auth auth=AuthMapper.INSTANCE.fromAuthRegisterRequestDtoToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
         save(auth);
+
         RegisterResponseDto responseDto = AuthMapper.INSTANCE.fromAuthToRegisterResponseDto(auth);
         mailSenderService.sendMail(responseDto);
+        userProfileService.save(AuthMapper.INSTANCE.fromAuthToUserProfile(auth));
 
         return responseDto;
     }

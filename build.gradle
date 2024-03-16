@@ -51,6 +51,7 @@ allprojects {
         implementation libs.jwt
         implementation libs.springBootStarterDataMongoDB
         implementation libs.springBootMailSender
+        implementation libs.springBootStarterDataRedis
 
     }
 
